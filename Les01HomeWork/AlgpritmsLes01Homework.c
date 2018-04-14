@@ -190,6 +190,7 @@ void solution1()	 //1. Ввести вес и рост человека.Рассчитать и вывести индекс ма
 	scanf_s("%lf", &gr);
 	BMI = wht / (gr*gr);
 	printf("BMI: %lf", BMI);
+	getch();
 }
 
 void solution2() //2. Найти максимальное из четырех чисел.Массивы не использовать.
@@ -214,7 +215,33 @@ void solution2() //2. Найти максимальное из четырех чисел.Массивы не использоват
 	scanf_s("%d", &num4);
 	max = maximum(max, num4);
 	printf("Maximum: %d\n", max);
+	getch();
 }
+
+//3. Написать программу обмена значениями двух целочисленных переменных :
+//a.с использованием третьей переменной;
+//b. *без использования третьей переменной.
+void solution3()
+{
+	printf("Solution 3\n");
+	// Решение с использованием третьей переменной;
+	int a, b, c;
+	printf("Input a (int):");
+	scanf_s("%d", &a);
+	printf("Input b (int):");
+	scanf_s("%d", &b);
+	c = b;
+	b = a;
+	a = c;
+	printf("a= %d\n", a);
+	printf("b= %d\n", b);
+	getch();
+
+
+
+	
+}
+
 
 void solution7()
 {
@@ -235,6 +262,7 @@ void solution7()
 	printf("Input SecondCel y2(1-8):");
 	scanf_s("%d", &secondCell.y);
 	checkColor(firstCell, secondCell);
+	getch();
 
 }
 
@@ -278,21 +306,18 @@ void solution14()
 		}
 		
 	}
+	getch();
 }
 
-void solution3()
-{
-	printf("Solution 3\n");
-	// Решение
-}
 
 void menu()
 {
 	printf("Menu\n");
 	printf("1 - BMI\n");
 	printf("2 - Maximum\n");
-	printf("3 - task3\n");
-	printf("7 - task7\n");
+	printf("3 - Change num\n");
+	printf("7 - Chessmates color\n");
+	printf("14 - Find automorf\n");
 	printf("0 - exit\n");
 }
 
