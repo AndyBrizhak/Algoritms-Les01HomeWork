@@ -169,6 +169,9 @@ int main()
 		case 4:
 			solution4();
 			break;
+		case 5:
+			solution4();
+			break;
 		case 7:
 			solution7();
 			break;
@@ -281,6 +284,24 @@ void solution4()
 	getch();
 }
 
+//5. С клавиатуры вводится номер месяца.Требуется определить, к какому времени года он относится.
+void solution5()
+{
+	int m;
+	printf("Input number month (1-12):");
+	scanf_s("%d", &m);
+	if (m<1 || m>12 )
+	{
+		printf("Incorrect number month (only 1 ... 12)\n");
+	}
+	else if (true)
+	{
+
+	}
+
+
+}
+
 void solution7()
 {
 	//7. *С клавиатуры вводятся числовые координаты двух полей шахматной доски(x1, y1, x2, y2).
@@ -355,6 +376,7 @@ void menu()
 	printf("2 - Maximum\n");
 	printf("3 - Change num\n");
 	printf("4 - Roots\n");
+	printf("5 - Month\n");
 	printf("7 - Chessmates color\n");
 	printf("14 - Find automorf\n");
 	printf("0 - exit\n");
