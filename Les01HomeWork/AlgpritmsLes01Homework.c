@@ -14,7 +14,30 @@
 //***Рассчитать время нахождения этого числа.
 //4. Реализовать алгоритм ускоренного возведения в степень.
 
-//typedef struct Cell ChessCell; // определяем ChessCell как стурктуру Cell
+//1. Ввести вес и рост человека.Рассчитать и вывести индекс массы тела по формуле I = m / (h*h); где m - масса тела в килограммах, h - рост в метрах.
+//2. Найти максимальное из четырех чисел.Массивы не использовать.
+//3. Написать программу обмена значениями двух целочисленных переменных :
+//a.с использованием третьей переменной;
+//b. *без использования третьей переменной.
+//
+//4. Написать программу нахождения корней заданного квадратного уравнения.
+//5. С клавиатуры вводится номер месяца.Требуется определить, к какому времени года он относится.
+//6. Ввести возраст человека(от 1 до 150 лет) и вывести его вместе с последующим словом «год», «года» или «лет».
+//7. С клавиатуры вводятся числовые координаты двух полей шахматной доски(x1, y1, x2, y2).Требуется определить, относятся поля к одному цвету или нет.
+//8. Ввести a и b и вывести квадраты и кубы чисел от a до b.
+//9. Даны целые положительные числа N и K.Используя только операции сложения и вычитания, найти частное от деления нацело N на K, а также остаток от этого деления.
+//10. Дано целое число N(> 0).С помощью операций деления нацело и взятия остатка от деления определить, имеются ли в записи числа N нечетные цифры.Если имеются, то вывести True, если нет — вывести False.
+//11. С клавиатуры вводятся числа, пока не будет введен 0. Подсчитать среднее арифметическое всех положительных четных чисел, оканчивающихся на 8.
+//12. Написать функцию нахождения максимального из трех чисел.
+//13. * Написать функцию, генерирующую случайное число от 1 до 100.
+//а) с использованием стандартной функции rand()
+//б) без использования стандартной функции rand()
+//
+//14. *Автоморфные числа.Натуральное число называется автоморфным, если оно равно последним цифрам своего квадрата.Например, 252 = 625. Напишите программу, которая вводит натуральное число N и выводит на экран все автоморфные числа, не превосходящие N.
+//Достаточно решить 3 задачи.Записывайте в начало программы условие и свою фамилию.Все решения создавайте в одной программе.Задачи со звездочками выполняйте в том случае, если решили базовые.Снабдите программу меню.
+
+
+
 
 struct Cell   //создаем структуру клетка
 {
@@ -24,9 +47,20 @@ struct Cell   //создаем структуру клетка
 
 typedef struct Cell ChessCell; // определяем ChessCell как стурктуру Cell
 
-void solution1();   // прототип функции Check if the cells have the same color
+void solution1();   //1. Ввести вес и рост человека.Рассчитать и вывести индекс массы тела по формуле I = m / (h*h); где m - масса тела в килограммах, h - рост в метрах.
 void solution2();
 void solution3();
+void solution4();
+void solution5();
+void solution6();
+void solution7();
+void solution8();
+void solution9();
+void solution10();
+void solution11();
+void solution12();
+void solution13();
+void solution14();
 void menu();
 
 ///
@@ -70,7 +104,14 @@ void checkColor(/*struct */ChessCell firstCell, /*struct*/ ChessCell secondCell)
 
 }
 
-int compareSpec(unsigned int head1, unsigned int head2)
+unsigned long long int tailing(unsigned long long int head)
+{
+	unsigned long long int tail;
+	tail = head - (head / 10) * 10;											// вычисляем хвост - остаток от деления 
+	return tail;
+}
+
+unsigned long long int compareSpec(unsigned long long int head1, unsigned long long int head2)
 {
 	//unsigned int numDig = 0;
 	//unsigned int temp;
@@ -82,10 +123,10 @@ int compareSpec(unsigned int head1, unsigned int head2)
 	//}
 
 
-	unsigned int tail1 = NULL;
-	unsigned int tail2 = NULL;
-	unsigned int automorf = NULL;
-	unsigned int statehead1;
+	unsigned long long int tail1 = NULL;
+	unsigned long long int tail2 = NULL;
+	unsigned long long int automorf = NULL;
+	unsigned long long int statehead1;
 	statehead1 = head1;
 	while (head1 > 0)													// пока больше нуля выполняем цикл
 	{
@@ -108,12 +149,7 @@ int compareSpec(unsigned int head1, unsigned int head2)
 	return automorf;
 }
 
-unsigned int tailing(unsigned int head)
-{
-	unsigned int tail;
-	tail = head - (head / 10) * 10;											// вычисляем хвост - остаток от деления 
-	return tail;
-}
+
 
 
 int main()
@@ -126,13 +162,16 @@ int main()
 		switch (sel)
 		{
 		case 1:
-			solution1();
+			solution1();//1. Ввести вес и рост человека.Рассчитать и вывести индекс массы тела по формуле I = m / (h*h); где m - масса тела в килограммах, h - рост в метрах.
 			break;
 		case 2:
 			solution2();
 			break;
 		case 3:
 			solution3();
+			break;
+		case 7:
+			solution7();
 			break;
 		case 0:
 			printf("Bye-bye");
@@ -144,9 +183,24 @@ int main()
 	return 0;
 }
 
-void solution1()
+void solution1()	 //1. Ввести вес и рост человека.Рассчитать и вывести индекс массы тела по формуле I = m / (h*h); где m - масса тела в килограммах, h - рост в метрах.
 {
-	//1. *С клавиатуры вводятся числовые координаты двух полей шахматной доски(x1, y1, x2, y2).
+	double wht;
+	double gr;
+	double BMI;
+	printf("Input Weght (kg):");
+	scanf_s("%lf", &wht);
+	printf("Input growth (m):");
+	scanf_s("%lf", &gr);
+	BMI = wht / (gr*gr);
+	printf("BMI: %lf", BMI);
+
+
+}
+
+void solution7()
+{
+	//7. *С клавиатуры вводятся числовые координаты двух полей шахматной доски(x1, y1, x2, y2).
 	//Требуется определить, относятся ли к поля к одному цвету или нет.
 	printf("Solution 1\n ");
 	printf("Check if the cells have the same color?\n ");
@@ -168,16 +222,16 @@ void solution1()
 
 void solution2()
 {
-	unsigned int num;
-	unsigned int i;
-	unsigned int result;
-	unsigned int automorf;
+	unsigned long long int num;
+	unsigned long long int i;
+	unsigned long long int result;
+	unsigned long long int automorf;
 
 	printf("Solution 2\n");
 	printf("Display all special numbers on the screen.\n ");
 	// Решение
 	printf("Input integer number: \n ");
-	scanf_s("%d", &num);
+	scanf_s("%llu", &num);
 	automorf = NULL;
 	for (i = 0; i <= num; i++)
 	{
@@ -185,7 +239,7 @@ void solution2()
 		{
 			automorf = 0;
 			printf(" Automorf special number: \n ");
-			printf("%d\n ", automorf);
+			printf("%llu\n ", automorf);
 		}
 		else if (i == 1)
 		{
@@ -200,7 +254,7 @@ void solution2()
 		if (automorf != NULL)
 		{
 			printf(" Automorf special number: \n ");
-			printf("%d\n ", automorf);
+			printf("%llu\n ", automorf);
 		}
 		
 	}
@@ -214,9 +268,10 @@ void solution3()
 
 void menu()
 {
-	printf("1 - task1\n");
+	printf("1 - BMI\n");
 	printf("2 - task2\n");
 	printf("3 - task3\n");
+	printf("7 - task7\n");
 	printf("0 - exit\n");
 }
 
