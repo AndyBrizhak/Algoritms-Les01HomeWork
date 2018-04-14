@@ -170,7 +170,7 @@ int main()
 			solution4();
 			break;
 		case 5:
-			solution4();
+			solution5();
 			break;
 		case 7:
 			solution7();
@@ -294,12 +294,27 @@ void solution5()
 	{
 		printf("Incorrect number month (only 1 ... 12)\n");
 	}
-	else if (true)
+	else if (m==12 || m==1 || m==2)
 	{
-
+		printf("This is Winter\n");
 	}
-
-
+	else if (m==3 || m==4 || m==5)
+	{
+		printf("This is Spring\n");
+	}
+	else if (m == 6 || m == 7 || m == 8)
+	{
+		printf("This is Summer\n");
+	}
+	else if (m == 9 || m == 10 || m == 11)
+	{
+		printf("This is Autumn\n");
+	}
+	else
+	{
+		printf("Incorrect number month (only intger 1 ... 12)\n");
+	}
+	getch();
 }
 
 void solution7()
