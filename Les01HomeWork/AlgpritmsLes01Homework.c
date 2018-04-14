@@ -102,16 +102,7 @@ unsigned long long int tailing(unsigned long long int head)
 
 unsigned long long int compareSpec(unsigned long long int head1, unsigned long long int head2)
 {
-	//unsigned int numDig = 0;
-	//unsigned int temp;
-	//temp = head1;
-	//while (temp>0)
-	//{
-	//	numDig += 1;
-	//	temp = temp / 10;
-	//}
-
-
+	
 	unsigned long long int tail1 = NULL;
 	unsigned long long int tail2 = NULL;
 	unsigned long long int automorf = NULL;
@@ -158,7 +149,7 @@ int main()
 		switch (sel)
 		{
 		case 1:
-			solution1();//1. Ввести вес и рост человека.Рассчитать и вывести индекс массы тела по формуле I = m / (h*h); где m - масса тела в килограммах, h - рост в метрах.
+			solution1();
 			break;
 		case 2:
 			solution2();
@@ -172,8 +163,14 @@ int main()
 		case 5:
 			solution5();
 			break;
+		case 6:
+			solution6();
+			break;
 		case 7:
 			solution7();
+			break;
+		case 14:
+			solution14();
 			break;
 		case 0:
 			printf("Bye-bye");
@@ -317,6 +314,12 @@ void solution5()
 	getch();
 }
 
+//6. Ввести возраст человека(от 1 до 150 лет) и вывести его вместе с последующим словом «год», «года» или «лет».
+void solution6()
+{
+
+}
+
 void solution7()
 {
 	//7. *С клавиатуры вводятся числовые координаты двух полей шахматной доски(x1, y1, x2, y2).
@@ -349,7 +352,7 @@ void solution14()
 	unsigned long long int result;
 	unsigned long long int automorf;
 
-	printf("Solution 2\n");
+	printf("Automorf \n");
 	printf("Display all special numbers on the screen.\n ");
 	// Решение
 	printf("Input integer number: \n ");
@@ -392,6 +395,7 @@ void menu()
 	printf("3 - Change num\n");
 	printf("4 - Roots\n");
 	printf("5 - Month\n");
+	printf("6 - Age\n");
 	printf("7 - Chessmates color\n");
 	printf("14 - Find automorf\n");
 	printf("0 - exit\n");
