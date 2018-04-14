@@ -166,6 +166,9 @@ int main()
 		case 3:
 			solution3();
 			break;
+		case 4:
+			solution4();
+			break;
 		case 7:
 			solution7();
 			break;
@@ -245,6 +248,38 @@ void solution3()
 	getch();
 }
 
+void solution4()
+//4. Написать программу нахождения корней заданного квадратного уравнения.
+// ax^2+bx+c=0 
+//D=b^2-4ac
+//
+{
+	double a, b, c, D, x1, x2;
+	printf("Input a :");
+	scanf_s("%lf", &a);
+	printf("Input b :");
+	scanf_s("%lf", &b);
+	printf("Input c :");
+	scanf_s("%lf", &c);
+	D = b * b - 4 * a*c;
+	if (D>0)
+	{
+		x1 = (sqrt(D) - b) / (2 * a);
+		x2 = (sqrt(D) + b) / (2 * a);
+		printf("First root: %lf\n", x1);
+		printf("Second root: %lf\n", x2);
+	}
+	else if (D==0)
+	{
+		x1 = -1 * (b / 2 * a);
+		printf("One root: %lf\n", x1);
+	}
+	else
+	{
+		printf("No roots\n");
+	}
+	getch();
+}
 
 void solution7()
 {
@@ -319,6 +354,7 @@ void menu()
 	printf("1 - BMI\n");
 	printf("2 - Maximum\n");
 	printf("3 - Change num\n");
+	printf("4 - Roots\n");
 	printf("7 - Chessmates color\n");
 	printf("14 - Find automorf\n");
 	printf("0 - exit\n");
