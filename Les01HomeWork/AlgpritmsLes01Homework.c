@@ -236,10 +236,13 @@ void solution3()
 	printf("a= %d\n", a);
 	printf("b= %d\n", b);
 	getch();
-
-
-
-	
+	//b. *без использования третьей переменной.
+	a = a + b;
+	b = a - b;
+	a = a - b;
+	printf("a= %d\n", a);
+	printf("b= %d\n", b);
+	getch();
 }
 
 
