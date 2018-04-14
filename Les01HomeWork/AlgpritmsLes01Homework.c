@@ -1,6 +1,8 @@
 #include "AlgpritmsLes01Homework.h"
 #include <stdio.h>
 #include <math.h>
+//#include <string.h>
+
 //Брижак Андрей Домашнее задание к занятию №1 Алгоритмы и структуры данных
 
 //1. Ввести вес и рост человека.Рассчитать и вывести индекс массы тела по формуле I = m / (h*h); где m - масса тела в килограммах, h - рост в метрах.
@@ -141,6 +143,7 @@ int maximum(int x1, int x2)   //определение максимума двух целых чисел
 
 int main()
 {
+	//setlocale(LC_ALL, "Russian");
 	int sel = 0;
 	do
 	{
@@ -317,7 +320,18 @@ void solution5()
 //6. Ввести возраст человека(от 1 до 150 лет) и вывести его вместе с последующим словом «год», «года» или «лет».
 void solution6()
 {
-
+	int age;
+	printf("Input age (years) (1...150):");
+	scanf_s("%d", &age);
+	if (age % 10 == 1)
+	{
+		printf(" Your age is %d years old\n", age);
+	}
+	else if (age % 10 == 2 || age % 10 == 3 || age % 10 == 4)
+	{
+		printf(" Your age is %d years old\n", age);
+	}
+	
 }
 
 void solution7()
