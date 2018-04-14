@@ -323,7 +323,11 @@ void solution6()
 	int age;
 	printf("Input age (years) (1...150):");
 	scanf_s("%d", &age);
-	if (age % 10 == 1)
+	if (age<0 || age>150)
+	{
+		printf("Incorrect age (only 1 ... 150)\n");
+	}
+	else if (age % 10 == 1)
 	{
 		printf(" Your age is %d years old\n", age);
 	}
@@ -331,7 +335,15 @@ void solution6()
 	{
 		printf(" Your age is %d years old\n", age);
 	}
-	
+	else if (age % 10 == 0 || age % 10 == 5 || age % 10 == 6 || age % 10 == 7 || age % 10 == 8 || age % 10 == 9)
+	{
+		printf(" Your age is %d years old\n", age);
+	}
+	else
+	{
+		printf("Incorrect age (only 1 ... 150)\n");
+	}
+	getch();
 }
 
 void solution7()
