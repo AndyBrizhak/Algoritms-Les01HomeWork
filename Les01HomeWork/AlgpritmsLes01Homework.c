@@ -1,6 +1,7 @@
 #include "AlgpritmsLes01Homework.h"
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h> // Для использования генератора случайных чисел
 //#include <string.h>
 
 //Брижак Андрей Домашнее задание к занятию №1 Алгоритмы и структуры данных
@@ -541,6 +542,22 @@ void solution12()
 
 void solution13()
 {
+	srand(time(NULL)); // Инициализация счетчика случайных чисел.
+	printf("%d\n", rand() % 100 + 1); //... от 1 до 100
+	getch();
+
+	int x, a, b, m;
+	m = 100; // Вершина последовательности
+	b = 3;
+	a = 2;
+	x = 1;
+	int i;
+	int modulus = 100;
+	for (i = 0; i < modulus; i++)
+	{
+		x = (a * x + b) % m;
+		printf("%d\n ", x);
+	}
 	getch();
 }
 
