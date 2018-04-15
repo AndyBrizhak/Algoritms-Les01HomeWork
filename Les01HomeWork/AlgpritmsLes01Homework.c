@@ -409,6 +409,27 @@ void solution8()
 //9. ƒаны целые положительные числа N и K.»спользу€ только операции сложени€ и вычитани€, найти частное от делени€ нацело N на K, а также остаток от этого делени€.
 void solution9()
 {
+	int a, b, divint, divrem, i;
+	printf("Input a (int):");
+	scanf_s("%d", &a);
+	printf("Input b (int):");
+	scanf_s("%d", &b);
+	divint = 0;
+	if (a>0 & b>0)
+	{
+		while (a>=b)
+		{
+			a = a - b;
+			divint = divint + 1;
+		}
+		divrem = a;
+		printf(" Integer division  %d\n", divint);
+		printf(" Remainder %d\n", divrem);
+	}
+	else
+	{
+		printf("Incorrect numbers\n");
+	}
 	getch();
 }
 
