@@ -516,6 +516,22 @@ void solution11()
 //12. Написать функцию нахождения максимального из трех чисел.
 void solution12()
 {
+	int num1;
+	int num2;
+	int num3;
+	int max;
+
+	max = 0;
+	printf("Input num1 (int):");
+	scanf_s("%d", &num1);
+	max = maximum(max, num1);
+	printf("Input num2 (int):");
+	scanf_s("%d", &num2);
+	max = maximum(max, num2);
+	printf("Input num3 (int):");
+	scanf_s("%d", &num3);
+	max = maximum(max, num3);
+	printf("Maximum: %d\n", max);
 	getch();
 }
 
