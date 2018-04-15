@@ -37,6 +37,7 @@ struct Cell   //создаем структуру клетка
 };
 
 typedef struct Cell ChessCell; // определяем ChessCell как стурктуру Cell
+typedef enum { false, true } bool;
 
 void solution1();   //1. Ввести вес и рост человека.Рассчитать и вывести индекс массы тела по формуле I = m / (h*h); где m - масса тела в килограммах, h - рост в метрах.
 void solution2();
@@ -102,6 +103,7 @@ unsigned long long int tailing(unsigned long long int head)
 	return tail;
 }
 
+//поиск автоморфных чисел путем сравнения младших разрядов результата возведения в квадрат
 unsigned long long int compareSpec(unsigned long long int head1, unsigned long long int head2)
 {
 	
@@ -437,6 +439,28 @@ void solution9()
 //Если имеются, то вывести True, если нет — вывести False.
 void solution10()
 {
+	int a, i;
+	printf("Input a (int):");
+	scanf_s("%d", &a);
+	i = 0;
+	while (a>=1)
+	{
+
+		if (((a % 10) % 2) != 0)
+		{
+			i = 1;
+			break;
+		}
+		a = a / 10;
+	}
+	if (i>0)
+	{
+		printf("This number has odd digits - TRUE\n");
+	}
+	else
+	{
+		printf("This number has not odd digits - FALSE\n");
+	}
 	getch();
 }
 
