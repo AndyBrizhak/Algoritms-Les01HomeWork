@@ -465,8 +465,51 @@ void solution10()
 }
 
 //11. С клавиатуры вводятся числа, пока не будет введен 0. Подсчитать среднее арифметическое всех положительных четных чисел, оканчивающихся на 8.
+
+int chfn(int x)  // проверка условий задачи
+{
+	int res = 0;
+	if (Odd(x)>0 & ((x % 10) % 8 ==0) & x!=0)
+	{
+		res = 1;
+		return res;
+	}
+	else
+	{
+		return res;
+	}
+}
+
 void solution11()
 {
+	int counter = 0; // количество 
+	int grade = 0; // значение 
+	double sum = 0; // сумма 
+	double average; //средняя
+	int c = 0; // проверка условия 
+	do
+	{	
+		c = 0;
+		printf("%s", "Enter grade (or 0 to):");
+		scanf("%d", &grade);
+		c = chfn(grade);
+		if (c>0)
+		{
+			sum = sum + grade;
+			counter++;
+		}
+	} while (grade != 0);
+
+	if (counter != 0 & sum>0)
+	{
+		average = sum / counter;
+		printf("Average is %g\n", average);
+	}
+	else
+	{
+		puts("No have numbers with digits 8 were entered");
+	}
+
 	getch();
 }
 
