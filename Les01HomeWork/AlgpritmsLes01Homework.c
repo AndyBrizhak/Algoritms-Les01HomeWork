@@ -390,32 +390,45 @@ void solution7()
 //8. Ввести a и b и вывести квадраты и кубы чисел от a до b.
 void solution8()
 {
+	int a, b, sq, cb, i ;
+	printf("Input a (int):");
+	scanf_s("%d", &a);
+	printf("Input b (int):");
+	scanf_s("%d", &b);
+	for ( i = a; i <= b; i++)
+	{
+		sq = pow(i, 2);
+		cb = sq * i;
+		printf(" Square number  %d is %d\n", i, sq);
+		printf(" Cube number  %d is %d\n", i, cb);
 
+	}
+	getch();
 }
 
 //9. Даны целые положительные числа N и K.Используя только операции сложения и вычитания, найти частное от деления нацело N на K, а также остаток от этого деления.
 void solution9()
 {
-
+	getch();
 }
 
 //10. Дано целое число N(> 0).С помощью операций деления нацело и взятия остатка от деления определить, имеются ли в записи числа N нечетные цифры.
 //Если имеются, то вывести True, если нет — вывести False.
 void solution10()
 {
-
+	getch();
 }
 
 //11. С клавиатуры вводятся числа, пока не будет введен 0. Подсчитать среднее арифметическое всех положительных четных чисел, оканчивающихся на 8.
 void solution11()
 {
-
+	getch();
 }
 
 //12. Написать функцию нахождения максимального из трех чисел.
 void solution12()
 {
-
+	getch();
 }
 
 //13. * Написать функцию, генерирующую случайное число от 1 до 100.
@@ -424,7 +437,7 @@ void solution12()
 
 void solution13()
 {
-
+	getch();
 }
 
 
@@ -482,6 +495,12 @@ void menu()
 	printf("5 - Month\n");
 	printf("6 - Age\n");
 	printf("7 - Chessmates color\n");
+	printf("8 - degree\n");
+	printf("9 - division\n");
+	printf("10 - odd\n");
+	printf("11 - flag\n");
+	printf("12 - Max3\n");
+	printf("13 - Rand\n");
 	printf("14 - Find automorf\n");
 	printf("0 - exit\n");
 }
